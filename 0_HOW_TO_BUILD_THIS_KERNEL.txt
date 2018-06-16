@@ -1,0 +1,16 @@
+1. Prepatarions:
+ Make sure that your system install has all the neccessary packages for building a Linux kernel.
+ Get an uber aarch64 gcc: https://bitbucket.org/UBERTC/aarch64-linux-android-4.9/downloads/ (This repository contains prebuilt binaries).
+ Command below assume that you placed  the gcc in the ~/ubergcc/ directory.
+
+2. Building:
+  sudo -s #File permission problems occur without root
+  export CROSS_COMPILE=~/ubergcc/bin/aarch64-linux-android-
+  export ARCH=arm64
+  make lineage_s2_defconfig
+  make -j8
+
+3. Installing:
+ After the build finishes, and if it finishes without errors, the built kernel file is ./arch/arm64/boot/Image.gz-dtb
+ Rename it to zImage and replace an old zImage in the kernel installation zip.
+ That's all, the installation zip is ready to flash.
