@@ -1,5 +1,5 @@
-1. Prepatarions:
- Make sure that your system install has all the neccessary packages for building a Linux kernel.
+1. Preparations:
+ Make sure that your system install has all the necessary packages for building a Linux kernel.
  Get an uber aarch64 gcc: https://bitbucket.org/UBERTC/aarch64-linux-android-4.9/downloads/ (This repository contains prebuilt binaries).
  Command below assume that you placed  the gcc in the ~/ubergcc/ directory.
 
