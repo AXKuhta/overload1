@@ -540,6 +540,9 @@ extern int cpr_regulator_get_corner_voltage(struct regulator *regulator,
 extern int cpr_regulator_set_corner_voltage(struct regulator *regulator,
 		int corner, int volt);
 
+extern ssize_t gpu_clock_get_vdd(char *buf, ssize_t count);
+extern ssize_t gpu_clock_set_vdd(const char *buf, ssize_t count);
+
 ssize_t cpu_clock_get_vdd(char *buf)
 {
 	ssize_t count = 0;
@@ -569,6 +572,8 @@ ssize_t cpu_clock_get_vdd(char *buf)
 					a72_clk.c.fmax[i] / 1000000,
 					uv / 1000);
 	}
+	
+	count = gpu_clock_get_vdd(buf, count);
 
 	return count;
 }
@@ -612,6 +617,8 @@ ssize_t cpu_clock_set_vdd(const char *buf, size_t count)
         ret = sscanf(buf, "%s", line);
 		buf += strlen(line) + 1;
 	}
+
+	count = gpu_clock_set_vdd(buf, count);
 
 	return count;
 }
