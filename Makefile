@@ -389,6 +389,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Wno-tautological-compare -Wno-array-bounds \
 		   -Wno-duplicate-decl-specifier \
 		   -Wno-memset-elt-size -Wno-switch-unreachable \
+		   -Wno-maybe-uninitialized -Wno-memset-transposed-args
 
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
