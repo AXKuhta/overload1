@@ -1,7 +1,8 @@
 1. Preparations:
  Make sure that your system install has all the necessary packages for building a Linux kernel.
  I tested this only with GCC 6.3.0 from gcc-6-aarch64-linux-gnu package (Available in Debian and Ubuntu repositories)
- It's presumed that /usr/bin/aarch64-linux-gnu-* is symlinked to /usr/bin/aarch64-linux-gnu-*-6 via update-alternatives. It _may_ be done automatically during the package installation, but I don't remember for sure.
+ It's presumed that /usr/bin/aarch64-linux-gnu-* is symlinked to /usr/bin/aarch64-linux-gnu-*-6 via update-alternatives. I.E.:
+  sudo update-alternatives --install /usr/bin/aarch64-linux-gnu-gcc aarch64-linux-gnu-gcc /usr/bin/aarch64-linux-gnu-gcc-6 10
 
 2. Building:
   sudo -s #File permission problems occur without root
