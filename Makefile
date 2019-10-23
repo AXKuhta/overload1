@@ -379,7 +379,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
 		   -fno-delete-null-pointer-checks \
-		   -mcpu=cortex-a72.cortex-a53 -mtune=cortex-a72.cortex-a53 \
+		   -mcpu=cortex-a72.cortex-a53+crc+crypto \
 		   -Wno-deprecated-declarations \
 		   -Wno-misleading-indentation \
 		   -Wno-unused-const-variable \
