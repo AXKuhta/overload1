@@ -284,7 +284,7 @@ module_param_named(
 	battery_type, fg_batt_type, charp, S_IRUSR | S_IWUSR
 );
 
-static int fg_sram_update_period_ms = 1000; //Original value: 30000. Long-term hardware effects of this change are unexplored! (Maybe it was set to 30000 in the first place for a reason)
+static int fg_sram_update_period_ms = 3500; //Original value: 30000. Tightening it doesn't seems to cause any real problems, but at a value of 1000ms it still updates more like 2000ms.
 module_param_named(
 	sram_update_period_ms, fg_sram_update_period_ms, int, S_IRUSR | S_IWUSR
 );
@@ -2058,8 +2058,8 @@ out:
 #define BATT_TEMP_OFF		DISABLE_THERM_BIT
 #define BATT_TEMP_ON		(FORCE_RBIAS_ON_BIT | TEMP_SENSE_ALWAYS_BIT | \
 				TEMP_SENSE_CHARGE_BIT)
-#define TEMP_PERIOD_UPDATE_MS		333 // Original value: 10000
-#define TEMP_PERIOD_TIMEOUT_MS		100 // Original value: 3000
+#define TEMP_PERIOD_UPDATE_MS		10000
+#define TEMP_PERIOD_TIMEOUT_MS		3000
 static void update_temp_data(struct work_struct *work)
 {
 	s16 temp;
